@@ -1,0 +1,15 @@
+{
+  "name": "actual-importer",
+  "dependencies": {
+    "@actual-app/api": "^26.9.0",
+    "dotenv": "^18.0.1"
+  },
+  "main": "src/importer.ts",
+  "devDependencies": {
+    "@types/node": "^26.6.1",
+    "typescript": "^7.0.2"
+  },
+  "scripts": {
+    "start": "npx tsc && mkdir -p data && node dist/importer.js"
+  }
+}
