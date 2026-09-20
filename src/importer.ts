@@ -21,10 +21,7 @@ const data = require(process.env.DATA_FILE || '../data.json');
 
   for (const budget of data.data.Budget) {
     const budgetId = budget.id
-
-    // TODO: Remove time, this is only used for testing
-    const budgetName = `${budget.name} - ${time.getHours()}:${time.getMinutes()}`
-    await api.runImport(budgetName, () => run(budgetId, budgetName, data.data))
+    await api.runImport(budget.name, () => run(budgetId, budget.name, data.data))
   }
 
   await api.shutdown();
