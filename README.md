@@ -17,7 +17,7 @@ This concerns:
 * Budget Files don't have notes in Actual, so notes for Budgets are not imported
 * Reconciliation Data from EZ is ignored, since reconciliation was never implemented in the frontend
 * Archival status of Categories and Envelopes is not imported, since this can't be set via the Actual API. You will need to hide them manually in Actual
-* The "available from" setting for income works different than holding funds for next month in Actual. This **will lead to differents between Envelope Zero and Actual for the amounts shown in "Unallocated Funds"/"To Budget"** for previous months.
+* The "available from" setting for income works different than holding funds for next month in Actual. This **will lead to differents between Envelope Zero and Actual for the amounts shown in "Unallocated Funds"/"To Budget"** for previous months, which can be corrected manually.
 
 ## Design decisions
 
@@ -59,7 +59,7 @@ Now, you need to perform some steps to prepare the second part of the import.
 4. Reconcile all accounts
 5. Hide all Category groups and Categories that you had archived in Envelope Zero.
 
-Your budget in Actual should now look correct and exactly like in Envelope Zero before, except for the "To Budget" amounts.
+Your budget in Actual should now look correct and exactly like in Envelope Zero before, except for the "To Budget" amounts. To balance these, you can manually go through the budget and use the "Hold for next month"/"Release hold for next month" buttons.
 
 The "To Budget" amount for the current month however should now be the same as "Unallocated Funds" was in Envelope Zero.
 
